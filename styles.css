@@ -1172,6 +1172,31 @@ main {
   border: 0;
 }
 
+.project-rail-extra .project-embed__inner--banner {
+  aspect-ratio: 300 / 250;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+}
+
+.project-rail-extra .project-rail__figure--audio {
+  margin-bottom: 1rem;
+}
+
+.project-rail-extra .project-audio__caption {
+  margin: 0 0 0.35rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.02em;
+  color: #333;
+}
+
+.project-rail-extra .project-rail__figure--audio audio {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
 .project-rail-extra .project-rail-h {
   margin: 2.2em 0 0.5rem;
   font-size: 0.65rem;

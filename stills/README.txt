@@ -9,6 +9,7 @@ Case-study stills (not homepage thumbs).
   stills/carol-o-matic/                → Carol-O-Matic Singing Machine
   stills/lexus-immersive-sonic-challenge/ → Lexus | Immersive Sonic Challenge
   stills/lexus-dadchelor-party/       → Lexus | Dad'chelor Party
+  stills/fbm/                         → FBM | Pros Know
   (add more project folders the same way as you add projects; folder name = project slug)
 
 In projects.js, each still is listed with a path from the site root, e.g.:

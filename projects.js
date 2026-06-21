@@ -96,6 +96,59 @@ const PORTFOLIO_PROJECTS = [
     },
   },
   {
+    id: "fbm",
+    slug: "fbm",
+    title: "FBM | Pros Know",
+    thumb: "thumbs/fbm.png",
+    cardTags: "integrated, broadcast",
+    tags: ["general"],
+    vimeo: "https://vimeo.com/1201326366/cf1e94f8c3",
+    detail: {
+      bodyHTML:
+        "<p>Pros know what they need&mdash;and they need it now. This integrated campaign brought that insight to life across broadcast, out-of-home, display, and radio.</p>",
+      media: [
+        {
+          type: "vimeo",
+          url: "https://vimeo.com/1201326366/cf1e94f8c3",
+          alt: "FBM — Pros Know video 1",
+        },
+        {
+          type: "vimeo",
+          url: "https://vimeo.com/1201329155/39cbe4289c",
+          alt: "FBM — Pros Know video 2",
+        },
+        {
+          type: "vimeo",
+          url: "https://vimeo.com/1201328071/da5965ddb1",
+          alt: "FBM — Pros Know video 3",
+        },
+      ],
+      stillsLabel: false,
+      stills: [
+        { section: "OOH" },
+        { src: "stills/fbm/1_ooh.jpg", alt: "FBM — out-of-home 1" },
+        { src: "stills/fbm/2_ooh.jpg", alt: "FBM — out-of-home 2" },
+        { src: "stills/fbm/3_ooh_busbench.jpg", alt: "FBM — bus bench 1" },
+        { src: "stills/fbm/4_ooh_busbench.jpg", alt: "FBM — bus bench 2" },
+      ],
+      railHTML:
+        '<p class="project-rail-h">Banners</p>' +
+        '<div class="project-embed"><div class="project-embed__inner project-embed__inner--banner">' +
+        '<iframe src="FBM/4_Banners/1_FBM300x250_PROSKNOW_AWARENESS_300x250/FBM300x250_PROSKNOW_AWARENESS_300x250.html" title="FBM — Pros Know awareness banner" loading="lazy"></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner project-embed__inner--banner">' +
+        '<iframe src="FBM/4_Banners/2_FBM_2026_ProsKnow_Conversion_SameDayPickup_AnimatedDisplay_300x250/FBM_2026_ProsKnow_Conversion_SameDayPickup_AnimatedDisplay_300x250.html" title="FBM — same-day pickup banner" loading="lazy"></iframe></div></div>' +
+        '<div class="project-embed"><div class="project-embed__inner project-embed__inner--banner">' +
+        '<iframe src="FBM/4_Banners/3_300x250_FORKLIFT2_CONSIDERATION/300x250_FORKLIFT2_CONSIDERATION.html" title="FBM — forklift consideration banner" loading="lazy"></iframe></div></div>' +
+        '<p class="project-rail-h">Radio</p>' +
+        '<div class="project-rail__figure project-rail__figure--audio">' +
+        '<p class="project-audio__caption">:30 broadcast mix</p>' +
+        '<audio controls preload="metadata" src="FBM/2_Audio/FBM_ProsKnow30_05_21_26_BROADCAST_MIX.wav"></audio></div>' +
+        '<div class="project-rail__figure project-rail__figure--audio">' +
+        '<p class="project-audio__caption">:20 broadcast mix</p>' +
+        '<audio controls preload="metadata" src="FBM/2_Audio/FBM_ProsKnow20_05_21_26_BROADCAST_MIX.wav"></audio></div>',
+    },
+  },
+  {
     id: "4",
     slug: "lexus-gamers-is",
     title: "Lexus | Gamers' IS",
