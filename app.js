@@ -490,6 +490,7 @@
       if (!s || !s.src) return;
       const item = document.createElement("div");
       item.className = "project-stills__item";
+      if (s.size === "half") item.classList.add("project-stills__item--half");
       item.setAttribute("role", "listitem");
       const im = document.createElement("img");
       im.className = "project-stills__img";
@@ -532,6 +533,51 @@
         elCaseNext.removeAttribute("aria-label");
       }
     }
+  }
+
+  function initBannerPlayButtons(root) {
+    if (!root) return;
+    root.querySelectorAll(".project-banner").forEach(function (wrap) {
+      const src = wrap.getAttribute("data-banner-src");
+      const btn = wrap.querySelector(".project-banner__play");
+      const iframe = wrap.querySelector("iframe");
+      if (!src || !btn || !iframe) return;
+
+      const url = staticAssetUrl(src);
+      let pendingPlay = false;
+
+      function markReady() {
+        wrap.classList.add("project-banner--ready");
+      }
+
+      function playBanner() {
+        try {
+          if (iframe.contentWindow) {
+            iframe.contentWindow.postMessage("portfolio-banner-play", "*");
+            wrap.classList.add("project-banner--playing");
+            pendingPlay = false;
+            return;
+          }
+        } catch (err) {
+          /* cross-origin or not ready */
+        }
+        pendingPlay = true;
+      }
+
+      btn.addEventListener("click", playBanner);
+
+      function onBannerMessage(ev) {
+        if (ev.source !== iframe.contentWindow || ev.data !== "portfolio-banner-ready") return;
+        markReady();
+        if (pendingPlay) playBanner();
+      }
+
+      window.addEventListener("message", onBannerMessage);
+      iframe.addEventListener("load", function () {
+        if (pendingPlay) playBanner();
+      });
+      iframe.setAttribute("src", url);
+    });
   }
 
   function mountAudioPlaylist(root, playlist) {
@@ -834,6 +880,7 @@
         elRailExtra.hidden = false;
       } else if (d && d.railHTML) {
         elRailExtra.innerHTML = d.railHTML;
+        initBannerPlayButtons(elRailExtra);
         elRailExtra.hidden = false;
       } else {
         elRailExtra.innerHTML = "";

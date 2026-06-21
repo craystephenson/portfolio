@@ -100,12 +100,15 @@ const PORTFOLIO_PROJECTS = [
     slug: "fbm",
     title: "FBM | Pros Know",
     thumb: "thumbs/fbm.png",
-    cardTags: "integrated, broadcast",
-    tags: ["general"],
+    cardTags: "integrated, broadcast, ai",
+    tags: ["general", "ai"],
     vimeo: "https://vimeo.com/1201326366/cf1e94f8c3",
     detail: {
       bodyHTML:
-        "<p>Pros know what they need&mdash;and they need it now. This integrated campaign brought that insight to life across broadcast, out-of-home, display, and radio.</p>",
+        "<p>Big construction pros know that Foundation Building Materials delivers pro-grade materials.</p>" +
+        "<p>So when FBM decided to open their doors to smaller crews, they needed to introduce themselves in a way that separated them from the big-box stores.</p>" +
+        "<p>So we built a campaign using the language of the job site. We made it look pro-grade too, using real job-site reference images and AI to create an always-moving energy every pro could relate to.</p>" +
+        "<p>All for a seriously tight budget any GC would appreciate.</p>",
       media: [
         {
           type: "vimeo",
@@ -128,17 +131,23 @@ const PORTFOLIO_PROJECTS = [
         { section: "OOH" },
         { src: "stills/fbm/1_ooh.jpg", alt: "FBM — out-of-home 1" },
         { src: "stills/fbm/2_ooh.jpg", alt: "FBM — out-of-home 2" },
-        { src: "stills/fbm/3_ooh_busbench.jpg", alt: "FBM — bus bench 1" },
-        { src: "stills/fbm/4_ooh_busbench.jpg", alt: "FBM — bus bench 2" },
+        { src: "stills/fbm/3_ooh_busbench.jpg", alt: "FBM — bus bench 1", size: "half" },
+        { src: "stills/fbm/4_ooh_busbench.jpg", alt: "FBM — bus bench 2", size: "half" },
       ],
       railHTML:
-        '<p class="project-rail-h">Banners</p>' +
-        '<div class="project-embed"><div class="project-embed__inner project-embed__inner--banner">' +
-        '<iframe src="FBM/4_Banners/1_FBM300x250_PROSKNOW_AWARENESS_300x250/FBM300x250_PROSKNOW_AWARENESS_300x250.html" title="FBM — Pros Know awareness banner" loading="lazy"></iframe></div></div>' +
-        '<div class="project-embed"><div class="project-embed__inner project-embed__inner--banner">' +
-        '<iframe src="FBM/4_Banners/2_FBM_2026_ProsKnow_Conversion_SameDayPickup_AnimatedDisplay_300x250/FBM_2026_ProsKnow_Conversion_SameDayPickup_AnimatedDisplay_300x250.html" title="FBM — same-day pickup banner" loading="lazy"></iframe></div></div>' +
-        '<div class="project-embed"><div class="project-embed__inner project-embed__inner--banner">' +
-        '<iframe src="FBM/4_Banners/3_300x250_FORKLIFT2_CONSIDERATION/300x250_FORKLIFT2_CONSIDERATION.html" title="FBM — forklift consideration banner" loading="lazy"></iframe></div></div>' +
+        '<p class="project-rail-h project-rail-h--banners">Banners</p>' +
+        '<div class="project-banner" data-banner-src="FBM/4_Banners/1_FBM300x250_PROSKNOW_AWARENESS_300x250/FBM300x250_PROSKNOW_AWARENESS_300x250.html">' +
+        '<div class="project-embed project-banner__frame"><div class="project-embed__inner project-embed__inner--banner">' +
+        '<iframe title="FBM — Pros Know awareness banner"></iframe>' +
+        '<button type="button" class="project-banner__play" aria-label="Play Pros Know awareness banner"><span class="project-banner__play-icon" aria-hidden="true">▶</span><span class="project-banner__play-label">Play</span></button></div></div></div>' +
+        '<div class="project-banner" data-banner-src="FBM/4_Banners/2_FBM_2026_ProsKnow_Conversion_SameDayPickup_AnimatedDisplay_300x250/FBM_2026_ProsKnow_Conversion_SameDayPickup_AnimatedDisplay_300x250.html">' +
+        '<div class="project-embed project-banner__frame"><div class="project-embed__inner project-embed__inner--banner">' +
+        '<iframe title="FBM — same-day pickup banner"></iframe>' +
+        '<button type="button" class="project-banner__play" aria-label="Play same-day pickup banner"><span class="project-banner__play-icon" aria-hidden="true">▶</span><span class="project-banner__play-label">Play</span></button></div></div></div>' +
+        '<div class="project-banner" data-banner-src="FBM/4_Banners/3_300x250_FORKLIFT2_CONSIDERATION/300x250_FORKLIFT2_CONSIDERATION.html">' +
+        '<div class="project-embed project-banner__frame"><div class="project-embed__inner project-embed__inner--banner">' +
+        '<iframe title="FBM — forklift consideration banner"></iframe>' +
+        '<button type="button" class="project-banner__play" aria-label="Play forklift consideration banner"><span class="project-banner__play-icon" aria-hidden="true">▶</span><span class="project-banner__play-label">Play</span></button></div></div></div>' +
         '<p class="project-rail-h">Radio</p>' +
         '<div class="project-rail__figure project-rail__figure--audio">' +
         '<p class="project-audio__caption">:30 broadcast mix</p>' +

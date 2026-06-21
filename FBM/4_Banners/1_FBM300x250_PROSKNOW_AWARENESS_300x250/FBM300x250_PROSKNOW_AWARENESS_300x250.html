@@ -1414,14 +1414,49 @@ function handleComplete(evt,comp) {
 	stage.enableMouseOver();	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
-		stage.addChild(exportRoot);
+		if (!exportRoot.parent) {
+			stage.addChild(exportRoot);
+		}
+		createjs.Ticker.removeEventListener("tick", stage);
 		createjs.Ticker.framerate = lib.properties.fps;
 		createjs.Ticker.addEventListener("tick", stage);
-	}	    
+		exportRoot.gotoAndPlay(0);
+	}
+	function pauseAtPreviewSeconds(seconds) {
+		var targetFrame = Math.round(lib.properties.fps * seconds);
+		createjs.Ticker.framerate = 240;
+		createjs.Ticker.addEventListener("tick", stage);
+		exportRoot.gotoAndPlay(0);
+		var onPreviewTick = function() {
+			if (exportRoot.currentFrame >= targetFrame) {
+				exportRoot.stop();
+				createjs.Ticker.removeEventListener("tick", onPreviewTick);
+				createjs.Ticker.removeEventListener("tick", stage);
+				createjs.Ticker.framerate = lib.properties.fps;
+				stage.update();
+				try {
+					window.parent.postMessage("portfolio-banner-ready", "*");
+				} catch (e) {}
+			}
+		};
+		createjs.Ticker.addEventListener("tick", onPreviewTick);
+	}
+	stage.addChild(exportRoot);
+	var bannerStarted = false;
+	window.addEventListener("message", function(ev) {
+		if (ev && ev.data === "portfolio-banner-play") {
+			if (!bannerStarted) {
+				bannerStarted = true;
+				fnStartAnimation();
+			} else {
+				exportRoot.gotoAndPlay(0);
+			}
+		}
+	});
 	//Code to support hidpi screens and responsive scaling.
 	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
 	AdobeAn.compositionLoaded(lib.properties.id);
-	fnStartAnimation();
+	pauseAtPreviewSeconds(3);
 }
 </script>
 <!-- write your code here -->

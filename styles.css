@@ -1090,6 +1090,12 @@ main {
   line-height: 0;
 }
 
+.project-stills__item--half {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-stills__item--embed {
   background: #111;
 }
@@ -1172,6 +1178,87 @@ main {
   border: 0;
 }
 
+.project-stills:not([hidden]) + .project-rail-extra {
+  padding-top: 1.35rem;
+}
+
+.project-rail-extra .project-rail-h--banners {
+  margin-top: 3.25rem;
+}
+
+.project-rail-extra .project-banner {
+  margin: 1rem 0 0;
+}
+
+.project-rail-extra .project-banner__frame {
+  position: relative;
+  margin: 0 auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.project-rail-extra .project-banner__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.45rem 0.85rem 0.45rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font: inherit;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.project-rail-extra .project-banner:not(.project-banner--ready) .project-banner__play {
+  opacity: 0.55;
+}
+
+.project-rail-extra .project-banner:not(.project-banner--ready) iframe {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.project-rail-extra .project-banner--ready iframe {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.project-rail-extra .project-banner--ready:not(.project-banner--playing) iframe {
+  pointer-events: none;
+}
+
+.project-rail-extra .project-banner--playing iframe {
+  pointer-events: auto;
+}
+
+.project-rail-extra .project-banner__play:hover,
+.project-rail-extra .project-banner__play:focus-visible {
+  background: rgba(0, 0, 0, 0.88);
+  outline: none;
+}
+
+.project-rail-extra .project-banner__play-icon {
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.project-rail-extra .project-banner--playing .project-banner__play {
+  display: none;
+}
+
 .project-rail-extra .project-embed__inner--banner {
   aspect-ratio: 300 / 250;
   max-width: 300px;
@@ -1182,13 +1269,17 @@ main {
 
 .project-rail-extra .project-rail__figure--audio {
   margin-bottom: 1rem;
+  line-height: normal;
+  overflow: visible;
+  background: transparent;
 }
 
 .project-rail-extra .project-audio__caption {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.45rem;
   font-size: 0.65rem;
   letter-spacing: 0.02em;
   color: #333;
+  line-height: 1.35;
 }
 
 .project-rail-extra .project-rail__figure--audio audio {
