@@ -499,13 +499,13 @@ const PORTFOLIO_PROJECTS = [
     thumb: "thumbs/dream_phone.webp",
     cardTags: "ai, hacking, pi, code",
     tags: ["ai", "tech"],
-    vimeo: "https://vimeo.com/1171158209",
+    vimeo: "https://vimeo.com/1195174907",
     detail: {
       bodyHTML:
         "<p>Visionaries like Steve Jobs, Soichiro Honda, and John Lennon once inspired the world.</p>" +
         "<p>What if their voices could return—so convincingly, they inspire you all over again?</p>" +
         "<p>The Dream Phone closes the gap between illusion and reality by connecting you with the unmistakable voices and personalities of history&rsquo;s greatest dreamers through an actual Western Electric rotary phone. A device so warm and familiar, the voice on the other end simply has to be real.</p>",
-      media: [{ type: "vimeo", url: "https://vimeo.com/1171158209" }],
+      media: [{ type: "vimeo", url: "https://vimeo.com/1195174907" }],
       stills: [
         { section: "Build" },
         { src: "stills/the-dream-phone/1_build.jpeg", alt: "The Dream Phone — build 1" },
